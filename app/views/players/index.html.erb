@@ -1,0 +1,37 @@
+<h1>Listing players</h1>
+
+<table>
+  <tr>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Atbats</th>
+    <th>Hits</th>
+    <th>League</th>
+    <th>Team</th>
+    <th>Runs</th>
+    <th>Rbi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @players.each do |player| %>
+  <tr>
+    <td><%= player.fname %></td>
+    <td><%= player.lname %></td>
+    <td><%= player.atbats %></td>
+    <td><%= player.hits %></td>
+    <td><%= player.league %></td>
+    <td><%= player.team %></td>
+    <td><%= player.runs %></td>
+    <td><%= player.rbi %></td>
+    <td><%= link_to 'Show', player %></td>
+    <td><%= link_to 'Edit', edit_player_path(player) %></td>
+    <td><%= link_to 'Destroy', player, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Player', new_player_path %>
